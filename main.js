@@ -28,7 +28,7 @@ const cuentas = [
 
 
 
-const usuarios = (usuario, clave) => {
+const usuarios = () => {
     for (let i = 0; i < cuentas.length; i++) {
         if (usuario === cuentas[i].nombre && clave === cuentas[i].password) {
             let usuarios = cuentas[i]
@@ -37,9 +37,19 @@ const usuarios = (usuario, clave) => {
     }
 }
 
-console.log(usuarios('Manuel', 'l33t'));
+// console.log(usuarios('Manuel', 'l33t'));
+let usuario = document.getElementById("name").va
 
-let validacion = usuarios('Manuel', 'l33t');
+
+usuarios(, document.getElementById("password"));
+
+
+
+let confirmar = () => {
+    let ingreso = 
+};
+
+// let validacion = usuarios('Manuel', 'l33t');
 
 
 
@@ -48,28 +58,28 @@ let validacion = usuarios('Manuel', 'l33t');
 
 
 
-let retiro = (cantidad) => {
-let saldoRetiro = validacion.saldo;
-let retiroSaldo = saldoRetiro - cantidad;
-console.log(retiroSaldo);
-}
+// let retiro = (cantidad) => {
+// let saldoRetiro = validacion.saldo;
+// let retiroSaldo = saldoRetiro - cantidad;
+// console.log(retiroSaldo);
+// }
 
-retiro(50);
+// retiro(50);
 
 
 
-let deposito = (monto) => {
-    let saldoDeposito = validacion.saldo;
-    let depositoSaldo = saldoDeposito + monto;
-    console.log(depositoSaldo);
+// let deposito = (monto) => {
+//     let saldoDeposito = validacion.saldo;
+//     let depositoSaldo = saldoDeposito + monto;
+//     console.log(depositoSaldo);
 
-}
+// }
 
-deposito(100);
+// deposito(100);
 
-let saldo = () => {
- console.log(validacion.saldo);
-}
+// let saldo = () => {
+//  console.log(validacion.saldo);
+// }
 
 
 

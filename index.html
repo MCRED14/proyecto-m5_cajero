@@ -10,34 +10,45 @@
     <title>Proyecto Cajero</title>
 </head>
 
-<body>
+<body class="body bg-primary d-flex justify-content-center align-items-center" style="height: 800px;">
 
-    <div class="row">
+    <div class="bg-warning col-8 row"
+        style="height: 500px;">
 
+        <div class="cajaTitulo col-8 bg-info">
+            <h1 class="titulo ">Bienvenido a tu cajero ATM</h1>
+        </div>
 
-        <div class="cajaPrincipal bg-primary text-center col-8">
+        <div class="caja bg-secondary">
 
-            <h1 class="titulo">Bienvenido a tu cajero ATM</h1>
-
-
-            <div class="col-5 bg-warning text-center">
-                <div class="input-group  mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">USUARIO</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
-                </div>
-
+    
+            <div class="formulario bg-danger text-center">
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">NIP</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
+                    <span class="input-group-text" id="inputGroup-sizing-default">USUARIO</span>
+                    <input type="text" class="form-control" id="name" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+    
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text" id="inputGroup-sizing-default">CLAVE</span>
+                    <input type="text" class="form-control" id="password" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <button type="button" onclick="confirmar();">CONFIRMAR</button>
+            </div>
+
+            <div class="movimientos">
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                
             </div>
 
 
         </div>
-
     </div>
+
+
 
 
 

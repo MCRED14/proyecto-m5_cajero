@@ -26,30 +26,44 @@ const cuentas = [
     { nombre: 'Luis', saldo: 67, password: '123' }
 ];
 
+let usuarioActual = '';
 
+let verificacion = () => {
+    let usuario = document.getElementById("name").value;
+    let clave = document.getElementById("password").value;
 
-const usuarios = () => {
     for (let i = 0; i < cuentas.length; i++) {
         if (usuario === cuentas[i].nombre && clave === cuentas[i].password) {
-            let usuarios = cuentas[i]
-            return usuarios;
+            usuarioActual = cuentas[i];
+            document.getElementById('mov').style.display = "flex";
+            document.getElementById('mov').style.justifyContent = "space-around";
+            document.getElementById('error').style.display = "none";
+
         }
+    } if(usuarioActual == '') {
+        document.getElementById('error').style.display = "block";
+
     }
 }
 
-// console.log(usuarios('Manuel', 'l33t'));
-let usuario = document.getElementById("name").va
-
-
-usuarios(, document.getElementById("password"));
 
 
 
-let confirmar = () => {
-    let ingreso = 
-};
 
-// let validacion = usuarios('Manuel', 'l33t');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -59,7 +73,7 @@ let confirmar = () => {
 
 
 // let retiro = (cantidad) => {
-// let saldoRetiro = validacion.saldo;
+// let saldoRetiro = verificiacion.saldo;
 // let retiroSaldo = saldoRetiro - cantidad;
 // console.log(retiroSaldo);
 // }
@@ -78,6 +92,8 @@ let confirmar = () => {
 // deposito(100);
 
 // let saldo = () => {
+//     let saldoActual = 0;
+//     for()
 //  console.log(validacion.saldo);
 // }
 

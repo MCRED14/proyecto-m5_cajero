@@ -11,7 +11,7 @@
     <title>Proyecto Cajero</title>
 </head>
 
-<body class="body bg-primary d-flex justify-content-center align-items-center" style="height: 800px;">
+<body class="body bg-primary d-flex justify-content-center py-5">
 
     <div class="bg-warning col-8 row" style="height: 500px;">
 
@@ -20,10 +20,9 @@
             <h3>Por favor, ingrese sus datos</h3>
         </div>
 
-        <div class="caja bg-secondary">
+        <div class="cajaForm bg-secondary">
 
-
-            <div class="formulario bg-danger py-5 text-center">
+            <div class="formulario bg-danger py-5 text-center" id="form">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">USUARIO</span>
                     <input type="text" class="form-control" id="name" aria-label="Sizing example input"
@@ -35,21 +34,79 @@
                     <input type="text" class="form-control" id="password" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default">
                 </div>
+
                 <a href="#" class="btn btn-primary active " onclick="verificacion();" role="button"
                     data-bs-toggle="button" aria-pressed="true">ENTER</a>
+
+                <div class="position-relative" id="error">
+                    <div class="alert alert-warning alert-dismissible fade show position-absolute top-50 start-50 translate-middle"
+                        role="alert">
+                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                </div>
             </div>
-            
-            <p id="error">Error</p>
-            <div class=" movimientos" id="mov">
-                <button type="button" class="btn btn-primary btn-lg">SALDO</button>
-                <button type="button" class="btn btn-primary btn-lg">RETIRO</button>
-                <button type="button" class="btn btn-primary btn-lg">DEPÓSITO</button>
+
+
+
+
+            <div class=" movimientos bg-light" id="mov">
+
+                <div class="cajaSaldo row justify-content-center"">
+                    <button type=" button" class="btn btn-primary btn-lg col-3 my-3" onclick="consultaSaldo();">
+                    SALDO</button>
+
+                    <div class="card col-10">
+                        <div class="card-body">
+                            <h5 class="card-title">Saldo Actual</h5>
+                            <p class="card-text" id="textSaldo"></p>
+                        </div>
+                    </div>
+
+                    <div class="cajaRetiro row justify-content-center">
+
+                        <button type="button" class="btn btn-primary btn-lg col-3 my-3" onclick="retiro();" >RETIRO</button>
+
+                        <div class="form-floating py-3 col-10">
+                            <input type="number" class="form-control" id="montoRetiro" placeholder="number">
+                            <label for="floatingPassword">Ingrese el monto a retirar</label>
+                        </div>
+
+                        <div class="card col-10">
+                            <div class="card-body">
+                                <h5 class="card-title">Retiro</h5>
+                                <p class="card-text" id="textRetiro1"></p>
+                                <br>
+                                <p class="card-text" id="textRetiro2"></p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="cajaDeposito row justify-content-center">
+                        <button type="button" class="btn btn-primary btn-lg col-4 my-3" onclick="deposito();" >DEPÓSITO</button>
+
+                        <div class="form-floating col-10 py-3">
+                            <input type="number" class="form-control" id="montoDeposito" placeholder="number">
+                            <label for="floatingPassword">Ingresar depósito</label>
+                        </div>
+
+                        <div class="card col-10">
+                            <div class="card-body">
+                                <h5 class="card-title">Depósito</h5>
+                                <p class="card-text" id="textDepo1"></p>
+                                <p class="card-text" id="textDepo2"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
 
             </div>
-
-
         </div>
-    </div>
 
 
 
@@ -57,10 +114,10 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
-    <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+        <script src="main.js"></script>
 </body>
 
 </html>

@@ -21,9 +21,9 @@
 // Pdta: Al final sólo daremos esta opción de proyecto para todos. El otro que les comentamos, lo haremos en el transcurso del siguiente módulo
 
 const cuentas = [
-    { nombre: 'Hiromi', saldo: 200, password: 'helloworld' },
-    { nombre: 'Manuel', saldo: 290, password: 'l33t' },
-    { nombre: 'Luis', saldo: 67, password: '123' }
+    { id: 1, nombre: 'Hiromi', saldo: 200, password: 'helloworld' },
+    { id: 2, nombre: 'Manuel', saldo: 290, password: 'l33t' },
+    { id: 3, nombre: 'Luis', saldo: 67, password: '123' }
 ];
 
 let usuarioActual = '';
@@ -35,74 +35,69 @@ let verificacion = () => {
     for (let i = 0; i < cuentas.length; i++) {
         if (usuario === cuentas[i].nombre && clave === cuentas[i].password) {
             usuarioActual = cuentas[i];
+
             document.getElementById('mov').style.display = "flex";
             document.getElementById('mov').style.justifyContent = "space-around";
             document.getElementById('error').style.display = "none";
+            document.getElementById('form').style.display = "none";
 
         }
-    } if(usuarioActual == '') {
+    } if (usuarioActual == '') {
         document.getElementById('error').style.display = "block";
-
     }
 }
 
 
+let consultaSaldo = () => {
+
+    document.getElementById("textSaldo").innerText = `Tu saldo actual es de $${usuarioActual.saldo} pesos`;
+}
 
 
 
+let retiro = () => {
 
 
+    let montoRetiro = document.getElementById("montoRetiro").value;
+    
+
+    let resta = usuarioActual.saldo - montoRetiro;
+
+    if (resta <= 10) {
+
+        document.getElementById("textRetiro2").innerText = `ya no puedes hacer más retiros`;
+
+    } else {
+
+        document.getElementById("textRetiro1").innerText = `El monoto a retirar es $${montoRetiro}`;
+
+        usuarioActual.saldo = usuarioActual.saldo - montoRetiro;
+
+        document.getElementById("textRetiro2").innerText = `Tu saldo actual es $${usuarioActual.saldo}`;
+    };
 
 
+};
 
+let deposito = () => {
 
+    let montoDeposito = document.getElementById("montoDeposito").value;
 
+    let numberDepo = parseInt(montoDeposito);
 
+    let suma = usuarioActual.saldo + numberDepo;
 
+    if (suma > 990) {
 
+        document.getElementById("textDepo2").innerText = `ya no puedes hacer más depósitos`;
 
+    } else {
 
+        document.getElementById("textDepo1").innerText = `El monoto a depositar es $${montoDeposito}`;
 
+        usuarioActual.saldo = usuarioActual.saldo + numberDepo;
+        document.getElementById("textDepo2").innerText = `Tu saldo actual es $${usuarioActual.saldo}`;
 
+    }
 
-
-
-// console.log(cuentas[0].saldo);
-// console.log(cuentas[0].saldo = 300);
-
-
-
-// let retiro = (cantidad) => {
-// let saldoRetiro = verificiacion.saldo;
-// let retiroSaldo = saldoRetiro - cantidad;
-// console.log(retiroSaldo);
-// }
-
-// retiro(50);
-
-
-
-// let deposito = (monto) => {
-//     let saldoDeposito = validacion.saldo;
-//     let depositoSaldo = saldoDeposito + monto;
-//     console.log(depositoSaldo);
-
-// }
-
-// deposito(100);
-
-// let saldo = () => {
-//     let saldoActual = 0;
-//     for()
-//  console.log(validacion.saldo);
-// }
-
-
-
-
-
-// let consultarSaldo = cuentas[i].saldo;
-// console.log(`Hola ${cuentas[i].nombre} qué movimiento deseas hacer`)
-
-// let retiro = 0;
-// let deposito = 0;
+};

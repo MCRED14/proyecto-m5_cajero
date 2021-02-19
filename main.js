@@ -65,7 +65,7 @@ let retiro = () => {
 
     if (resta <= 10) {
 
-        document.getElementById("textRetiro2").innerText = `ya no puedes hacer más retiros`;
+        document.getElementById("textRetiro2").innerText = `Haz excedido el monto mínimo en tu cuenta, ya no puedes hacer más retiros`;
 
     } else {
 
@@ -89,7 +89,7 @@ let deposito = () => {
 
     if (suma > 990) {
 
-        document.getElementById("textDepo2").innerText = `ya no puedes hacer más depósitos`;
+        document.getElementById("textDepo2").innerText = `Haz excedido el monto máximo en tu cuenta, ya no puedes hacer más depósitos`;
 
     } else {
 
@@ -101,3 +101,4 @@ let deposito = () => {
     }
 
 };
+

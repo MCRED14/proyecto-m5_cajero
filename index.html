@@ -11,9 +11,9 @@
     <title>Proyecto Cajero</title>
 </head>
 
-<body class="body bg-primary d-flex justify-content-center py-5">
+<body class="body bg-primary d-flex justify-content-center">
 
-    <div class="bg-warning col-8 row" style="height: 500px;">
+    <div class="col-8 row py-5" style="height: 500px;">
 
         <div class="cajaTitulo text-center bg-info pt-5">
             <h1 class="titulo ">Bienvenido a tu cajero ATM</h1>
@@ -22,7 +22,7 @@
 
         <div class="cajaForm bg-secondary">
 
-            <div class="formulario bg-danger py-5 text-center" id="form">
+            <div class="formulario py-5 text-center" id="form">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">USUARIO</span>
                     <input type="text" class="form-control" id="name" aria-label="Sizing example input"
@@ -41,7 +41,7 @@
                 <div class="position-relative" id="error">
                     <div class="alert alert-warning alert-dismissible fade show position-absolute top-50 start-50 translate-middle"
                         role="alert">
-                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                        <strong>Intenta de nuevo!</strong> Ingrsea el nombre y contraseña correcta.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
 
@@ -51,7 +51,7 @@
 
 
 
-            <div class=" movimientos bg-light" id="mov">
+            <div class=" movimientos bg-light py-5" id="mov">
 
                 <div class="cajaSaldo row justify-content-center"">
                     <button type=" button" class="btn btn-primary btn-lg col-3 my-3" onclick="consultaSaldo();">
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="cajaDeposito row justify-content-center">
-                        <button type="button" class="btn btn-primary btn-lg col-4 my-3" onclick="deposito();" >DEPÓSITO</button>
+                        <button type="button" class="btn btn-primary btn-lg col-3 my-3" onclick="deposito();" >DEPÓSITO</button>
 
                         <div class="form-floating col-10 py-3">
                             <input type="number" class="form-control" id="montoDeposito" placeholder="number">
@@ -108,16 +108,13 @@
             </div>
         </div>
 
+        <!-- <footer class="footer bg-danger" id="footer" style="height: 100px;">
 
-
-
-
-
+        </footer> -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
         </script>
         <script src="main.js"></script>
 </body>
-
 </html>
